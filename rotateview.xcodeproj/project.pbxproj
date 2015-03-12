@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EA7731E31AB20815003D6A11 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA7731E21AB20815003D6A11 /* MediaPlayer.framework */; };
 		EAAE609D1AB13855005B669B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAE609C1AB13855005B669B /* AppDelegate.swift */; };
 		EAAE60A01AB13855005B669B /* rotateview.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EAAE609E1AB13855005B669B /* rotateview.xcdatamodeld */; };
 		EAAE60A21AB13855005B669B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAE60A11AB13855005B669B /* ViewController.swift */; };
@@ -29,6 +30,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		EA7731E21AB20815003D6A11 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		EAAE60971AB13855005B669B /* rotateview.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = rotateview.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAAE609B1AB13855005B669B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EAAE609C1AB13855005B669B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -49,6 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA7731E31AB20815003D6A11 /* MediaPlayer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +68,7 @@
 		EAAE608E1AB13855005B669B = {
 			isa = PBXGroup;
 			children = (
+				EA7731E21AB20815003D6A11 /* MediaPlayer.framework */,
 				EAAE60991AB13855005B669B /* rotateview */,
 				EAAE60B21AB13856005B669B /* rotateviewTests */,
 				EAAE60981AB13855005B669B /* Products */,
@@ -417,6 +421,7 @@
 				EAAE60BB1AB13856005B669B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EAAE60BC1AB13856005B669B /* Build configuration list for PBXNativeTarget "rotateviewTests" */ = {
 			isa = XCConfigurationList;
@@ -425,6 +430,7 @@
 				EAAE60BE1AB13856005B669B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
