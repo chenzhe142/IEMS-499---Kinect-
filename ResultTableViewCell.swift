@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import MediaPlayer
+import QuartzCore
 
 class ResultTableViewCell: UITableViewCell {
     
@@ -17,11 +17,9 @@ class ResultTableViewCell: UITableViewCell {
     @IBOutlet weak var endTime: UILabel!
     @IBOutlet weak var videoPath: UILabel!
     
+    
+    @IBOutlet weak var playVideo: UIButton!
 
-
-    
-    
-    
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -41,5 +39,4 @@ class ResultTableViewCell: UITableViewCell {
         self.endTime.text = endTimeText
         self.videoPath.text = videoPathText
     }
-
 }

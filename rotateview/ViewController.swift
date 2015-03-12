@@ -9,7 +9,7 @@
 import UIKit
 import MediaPlayer
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITableViewDelegate {
     
     //test data for custom cell
     let tableData = ["One","Two","Three"]
@@ -42,7 +42,7 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         
         
-        
+        //set up video player path
         let url = NSURL(string: "http://129.105.36.214/index2.php?StartTime=2015-02-13%2000:00:00&EndTime=2015-02-23%2023:00:00")
         var error: NSError?
         let html = NSString(contentsOfURL: url!, encoding: NSUTF8StringEncoding, error: &error)
@@ -66,6 +66,9 @@ class ViewController: UIViewController {
         
         //add data to arrayOfResults
         self.setupResults()
+        
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -97,6 +100,8 @@ class ViewController: UIViewController {
             videoViewBottomConstraint.constant = (viewHeight/2.0)
             videoViewTrailingConstraint.constant = -padding
             
+            moviePlayer.view.frame = self.videoView.bounds
+            
             searchParametersViewTrailingConstraint.constant = -padding
             
             resultViewLeadingConstraint.constant = -padding
@@ -119,12 +124,46 @@ class ViewController: UIViewController {
 //        return cell
         var cell = tableView.dequeueReusableCellWithIdentifier("cell") as ResultTableViewCell
         
+        cell.playVideo.tag = indexPath.row
+        cell.playVideo.addTarget(self, action: "playVideoInCell", forControlEvents: UIControlEvents.TouchUpInside)
+        
         let singleResult = arrayOfResults[indexPath.row]
         
         cell.setCell(singleResult.kinectNumber, startTimeText: singleResult.startTime, endTimeText: singleResult.endTime, videoPathText: singleResult.videoPath)
         
         
+
+        
         return cell
+    }
+    
+    func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        // Return false if you do not want the specified item to be editable.
+        return true
+    }
+    
+    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        if editingStyle == .Delete {
+            //objects.removeObjectAtIndex(indexPath.row)
+            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+        } else if editingStyle == .Insert {
+            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
+        }
+    }
+    
+    
+    func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [AnyObject]? {
+        
+        var moreRowAction = UITableViewRowAction(style: UITableViewRowActionStyle.Default, title: "Play", handler:{action, indexpath in
+            println("PLAY•ACTION");
+        });
+        moreRowAction.backgroundColor = UIColor(red: 0.298, green: 0.851, blue: 0.3922, alpha: 1.0);
+        
+        var deleteRowAction = UITableViewRowAction(style: UITableViewRowActionStyle.Default, title: "Delete", handler:{action, indexpath in
+            println("DELETE•ACTION");
+        });
+        
+        return [deleteRowAction, moreRowAction];
     }
 
     
@@ -146,7 +185,17 @@ class ViewController: UIViewController {
         moviePlayer.play()
     }
     
-    
+    func playVideoInCell(sender: AnyObject) {
+        
+        var button: UIButton = sender as UIButton;
+        
+        //use the tag to index the array
+        let result1: result = arrayOfResults[button.tag]
+        
+        var videoPath : String = result1.videoPath
+        print(videoPath)
+    }
+
     
     
 }
