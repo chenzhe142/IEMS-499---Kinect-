@@ -18,7 +18,7 @@ class ResultTableViewCell: UITableViewCell {
     @IBOutlet weak var videoPath: UILabel!
     
     
-    @IBOutlet weak var playVideo: UIButton!
+
 
 
     override func awakeFromNib() {

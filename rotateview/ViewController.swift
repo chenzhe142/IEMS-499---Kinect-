@@ -47,16 +47,18 @@ class ViewController: UIViewController, UITableViewDelegate {
         var error: NSError?
         let html = NSString(contentsOfURL: url!, encoding: NSUTF8StringEncoding, error: &error)
         
-        var str = (html as String).componentsSeparatedByString("<br>")
-        //println(str)
-        
-        var url_1: String = str[1]
-        url_1 = (url_1 as NSString).substringFromIndex(1)
-        //println(url_1)
-        
-        var baseurl = "http://129.105.36.214/webfile"
-        baseurl = baseurl + url_1
-        println(baseurl)
+//        var str = (html as String).componentsSeparatedByString("<br>")
+//        //println(str)
+//        
+//        var url_1: String = str[1]
+//        url_1 = (url_1 as NSString).substringFromIndex(1)
+//        //println(url_1)
+//        
+//        var baseurl = "http://129.105.36.214/webfile"
+//        baseurl = baseurl + url_1
+//        println(baseurl)
+
+        var baseurl = "http://129.105.36.214/webfile/testvideo/galaxy1.mp4"
         
         var playurl:NSURL = NSURL(string: baseurl)!
         
@@ -124,8 +126,8 @@ class ViewController: UIViewController, UITableViewDelegate {
 //        return cell
         var cell = tableView.dequeueReusableCellWithIdentifier("cell") as ResultTableViewCell
         
-        cell.playVideo.tag = indexPath.row
-        cell.playVideo.addTarget(self, action: "playVideoInCell", forControlEvents: UIControlEvents.TouchUpInside)
+//        cell.playVideo.tag = indexPath.row
+//        cell.playVideo.addTarget(self, action: "playVideoInCell", forControlEvents: UIControlEvents.TouchUpInside)
         
         let singleResult = arrayOfResults[indexPath.row]
         
@@ -157,13 +159,11 @@ class ViewController: UIViewController, UITableViewDelegate {
         var moreRowAction = UITableViewRowAction(style: UITableViewRowActionStyle.Default, title: "Play", handler:{action, indexpath in
             println("PLAY•ACTION");
         });
-        moreRowAction.backgroundColor = UIColor(red: 0.298, green: 0.851, blue: 0.3922, alpha: 1.0);
+        //moreRowAction.backgroundColor = UIColor(red: 0.298, green: 0.851, blue: 0.3922, alpha: 1.0);
         
-        var deleteRowAction = UITableViewRowAction(style: UITableViewRowActionStyle.Default, title: "Delete", handler:{action, indexpath in
-            println("DELETE•ACTION");
-        });
+        moreRowAction.backgroundColor = UIColor(red: 0.4157, green: 0.212, blue: 0.5373, alpha: 1.0)
         
-        return [deleteRowAction, moreRowAction];
+        return [moreRowAction];
     }
 
     
