@@ -14,6 +14,8 @@
 		EAAE60A71AB13855005B669B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EAAE60A61AB13855005B669B /* Images.xcassets */; };
 		EAAE60AA1AB13855005B669B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = EAAE60A81AB13855005B669B /* LaunchScreen.xib */; };
 		EAAE60B61AB13856005B669B /* rotateviewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAE60B51AB13856005B669B /* rotateviewTests.swift */; };
+		EAAE60C01AB13C20005B669B /* ResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAE60BF1AB13C20005B669B /* ResultTableViewCell.swift */; };
+		EAAE60C21AB14109005B669B /* result.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAE60C11AB14109005B669B /* result.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +40,8 @@
 		EAAE60AF1AB13856005B669B /* rotateviewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = rotateviewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAAE60B41AB13856005B669B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EAAE60B51AB13856005B669B /* rotateviewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rotateviewTests.swift; sourceTree = "<group>"; };
+		EAAE60BF1AB13C20005B669B /* ResultTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ResultTableViewCell.swift; path = ../ResultTableViewCell.swift; sourceTree = "<group>"; };
+		EAAE60C11AB14109005B669B /* result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = result.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,9 +83,11 @@
 		EAAE60991AB13855005B669B /* rotateview */ = {
 			isa = PBXGroup;
 			children = (
+				EAAE60BF1AB13C20005B669B /* ResultTableViewCell.swift */,
 				EAAE609C1AB13855005B669B /* AppDelegate.swift */,
 				EAAE60A11AB13855005B669B /* ViewController.swift */,
 				EAAE60A31AB13855005B669B /* Main.storyboard */,
+				EAAE60C11AB14109005B669B /* result.swift */,
 				EAAE60A61AB13855005B669B /* Images.xcassets */,
 				EAAE60A81AB13855005B669B /* LaunchScreen.xib */,
 				EAAE609E1AB13855005B669B /* rotateview.xcdatamodeld */,
@@ -217,6 +223,8 @@
 			files = (
 				EAAE60A21AB13855005B669B /* ViewController.swift in Sources */,
 				EAAE609D1AB13855005B669B /* AppDelegate.swift in Sources */,
+				EAAE60C21AB14109005B669B /* result.swift in Sources */,
+				EAAE60C01AB13C20005B669B /* ResultTableViewCell.swift in Sources */,
 				EAAE60A01AB13855005B669B /* rotateview.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

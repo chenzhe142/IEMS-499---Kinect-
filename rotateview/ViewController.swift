@@ -9,6 +9,10 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    let tableData = ["One","Two","Three"]
+    
+    var arrayOfResults: [result] = [result]()
 
 
     @IBOutlet weak var videoViewTrailingConstraint: NSLayoutConstraint!
@@ -19,10 +23,15 @@ class ViewController: UIViewController {
     @IBOutlet weak var resultViewLeadingConstraint: NSLayoutConstraint!
     
     
+    @IBOutlet weak var resultTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        
+        
+        self.setupResults()
     }
 
     override func didReceiveMemoryWarning() {
@@ -57,6 +66,37 @@ class ViewController: UIViewController {
             resultViewTopConstraint.constant = (viewHeight/2.0)
         }
     }
+    
+    
+    func tableView(tableView: UITableView!, numberOfRowsInSection section: Int) -> Int
+    {
+        return self.arrayOfResults.count;
+    }
+    
+    func tableView(tableView: UITableView!,
+        cellForRowAtIndexPath indexPath: NSIndexPath!) -> UITableViewCell!
+    {
+//        let cell:UITableViewCell = UITableViewCell(style:UITableViewCellStyle.Default, reuseIdentifier:"Cell")
+//        cell.textLabel?.text = tableData[indexPath.row]
+//        
+//        return cell
+        var cell = tableView.dequeueReusableCellWithIdentifier("cell") as ResultTableViewCell
+        
+        let singleResult = arrayOfResults[indexPath.row]
+        
+        cell.setCell(singleResult.kinectNumber, startTimeText: singleResult.startTime, endTimeText: singleResult.endTime, videoPathText: singleResult.videoPath)
+        
+        
+        return cell
+    }
 
+    
+    
+    func setupResults() {
+        var result1 = result(kinectNumber: 0, startTime: "20202020", endTime: "2020202", videoPath: "blank")
+        arrayOfResults.append(result1)
+    }
+    
+    
 }
 
