@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C1510" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="2Ub-3L-RTo">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -42,7 +43,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="72" id="4aN-Nw-YV7" customClass="ResultTableViewCell" customModule="rotateview" customModuleProvider="target">
+                                    <tableViewCell contentMode="scaleToFill" restorationIdentifier="cell" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="72" id="4aN-Nw-YV7" customClass="ResultTableViewCell" customModule="rotateview" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4aN-Nw-YV7" id="5Nc-xi-Uo6">
@@ -133,14 +134,14 @@
                                 <exclude reference="6MI-F4-Xig"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="NYt-np-D1I"/>
-                                <exclude reference="ZhL-7D-4w6"/>
-                                <exclude reference="ox6-ef-SfI"/>
+                                <exclude reference="Asb-6x-Bri"/>
+                                <exclude reference="PhR-Ij-YKw"/>
                                 <exclude reference="6yn-eI-fy2"/>
                                 <exclude reference="S3S-2b-FJW"/>
                                 <exclude reference="zuR-XU-cdr"/>
-                                <exclude reference="Asb-6x-Bri"/>
-                                <exclude reference="PhR-Ij-YKw"/>
+                                <exclude reference="NYt-np-D1I"/>
+                                <exclude reference="ZhL-7D-4w6"/>
+                                <exclude reference="ox6-ef-SfI"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -149,14 +150,14 @@
                                 <include reference="6MI-F4-Xig"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="NYt-np-D1I"/>
-                                <include reference="ZhL-7D-4w6"/>
-                                <include reference="ox6-ef-SfI"/>
+                                <include reference="Asb-6x-Bri"/>
+                                <include reference="PhR-Ij-YKw"/>
                                 <include reference="6yn-eI-fy2"/>
                                 <include reference="S3S-2b-FJW"/>
                                 <include reference="zuR-XU-cdr"/>
-                                <include reference="Asb-6x-Bri"/>
-                                <include reference="PhR-Ij-YKw"/>
+                                <include reference="NYt-np-D1I"/>
+                                <include reference="ZhL-7D-4w6"/>
+                                <include reference="ox6-ef-SfI"/>
                             </mask>
                         </variation>
                     </view>
