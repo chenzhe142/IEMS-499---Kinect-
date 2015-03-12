@@ -156,14 +156,27 @@ class ViewController: UIViewController, UITableViewDelegate {
     
     func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [AnyObject]? {
         
-        var moreRowAction = UITableViewRowAction(style: UITableViewRowActionStyle.Default, title: "Play", handler:{action, indexpath in
-            println("PLAY•ACTION");
-        });
-        //moreRowAction.backgroundColor = UIColor(red: 0.298, green: 0.851, blue: 0.3922, alpha: 1.0);
+        let playVideoClosure = { (action: UITableViewRowAction!, indexPath: NSIndexPath!) -> Void in
+            var result1: result = self.arrayOfResults[indexPath.row]
+            
+            println(result1.videoPath)
+            println("play video")
+            
+            self.moviePlayer.view.frame = self.videoView.bounds
+            self.moviePlayer.scalingMode = MPMovieScalingMode.AspectFit
+            self.moviePlayer.controlStyle = MPMovieControlStyle.Embedded
+            self.moviePlayer.shouldAutoplay = true
+            
+            self.videoView.addSubview(self.moviePlayer.view)
+            self.moviePlayer.prepareToPlay()
+            self.moviePlayer.play()
+        }
         
-        moreRowAction.backgroundColor = UIColor(red: 0.4157, green: 0.212, blue: 0.5373, alpha: 1.0)
+        let playVideoAction = UITableViewRowAction(style: .Default, title: "Play", handler: playVideoClosure)
         
-        return [moreRowAction];
+        playVideoAction.backgroundColor = UIColor(red: 0.4157, green: 0.212, blue: 0.5373, alpha: 1.0)
+        
+        return [playVideoAction];
     }
 
     

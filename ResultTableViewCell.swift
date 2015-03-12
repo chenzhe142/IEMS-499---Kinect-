@@ -17,7 +17,7 @@ class ResultTableViewCell: UITableViewCell {
     @IBOutlet weak var endTime: UILabel!
     @IBOutlet weak var videoPath: UILabel!
     
-    
+    var videoFilePath: String = "blank"
 
 
 
@@ -38,5 +38,6 @@ class ResultTableViewCell: UITableViewCell {
         self.startTime.text = startTimeText
         self.endTime.text = endTimeText
         self.videoPath.text = videoPathText
+        self.videoFilePath = videoPathText
     }
 }
