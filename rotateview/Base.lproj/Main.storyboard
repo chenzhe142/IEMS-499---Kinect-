@@ -39,6 +39,23 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" red="1" green="0.15174474769999999" blue="0.2592937186" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M1F-ch-cIN" userLabel="Search parameters">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" red="0.26433205770000001" green="1" blue="0.34355976100000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="37" id="Ggq-1t-dh0"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="Ggq-1t-dh0"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="Ggq-1t-dh0"/>
+                                    </mask>
+                                </variation>
+                            </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="72" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="6MI-F4-Xig" userLabel="result view">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -121,43 +138,54 @@
                         <constraints>
                             <constraint firstItem="6MI-F4-Xig" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="6yn-eI-fy2"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="RZz-oA-Av5" secondAttribute="bottom" constant="281" id="Asb-6x-Bri"/>
+                            <constraint firstItem="M1F-ch-cIN" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="HEC-Zd-d2r"/>
+                            <constraint firstItem="M1F-ch-cIN" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="MOw-Dk-iO1"/>
                             <constraint firstAttribute="trailingMargin" secondItem="RZz-oA-Av5" secondAttribute="trailing" constant="-16" id="NYt-np-D1I"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="6MI-F4-Xig" secondAttribute="bottom" id="PhR-Ij-YKw"/>
                             <constraint firstAttribute="trailingMargin" secondItem="6MI-F4-Xig" secondAttribute="trailing" constant="-16" id="S3S-2b-FJW"/>
                             <constraint firstItem="RZz-oA-Av5" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="ZhL-7D-4w6"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="M1F-ch-cIN" secondAttribute="trailing" constant="-16" id="hK4-os-cJj"/>
                             <constraint firstItem="RZz-oA-Av5" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="ox6-ef-SfI"/>
                             <constraint firstItem="6MI-F4-Xig" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="296" id="zuR-XU-cdr"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="RZz-oA-Av5"/>
+                                <exclude reference="M1F-ch-cIN"/>
                                 <exclude reference="6MI-F4-Xig"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="Asb-6x-Bri"/>
-                                <exclude reference="PhR-Ij-YKw"/>
-                                <exclude reference="6yn-eI-fy2"/>
-                                <exclude reference="S3S-2b-FJW"/>
-                                <exclude reference="zuR-XU-cdr"/>
+                                <exclude reference="HEC-Zd-d2r"/>
+                                <exclude reference="MOw-Dk-iO1"/>
+                                <exclude reference="hK4-os-cJj"/>
                                 <exclude reference="NYt-np-D1I"/>
                                 <exclude reference="ZhL-7D-4w6"/>
                                 <exclude reference="ox6-ef-SfI"/>
+                                <exclude reference="6yn-eI-fy2"/>
+                                <exclude reference="S3S-2b-FJW"/>
+                                <exclude reference="zuR-XU-cdr"/>
+                                <exclude reference="Asb-6x-Bri"/>
+                                <exclude reference="PhR-Ij-YKw"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
                                 <include reference="RZz-oA-Av5"/>
+                                <include reference="M1F-ch-cIN"/>
                                 <include reference="6MI-F4-Xig"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="Asb-6x-Bri"/>
-                                <include reference="PhR-Ij-YKw"/>
-                                <include reference="6yn-eI-fy2"/>
-                                <include reference="S3S-2b-FJW"/>
-                                <include reference="zuR-XU-cdr"/>
+                                <include reference="HEC-Zd-d2r"/>
+                                <include reference="MOw-Dk-iO1"/>
+                                <include reference="hK4-os-cJj"/>
                                 <include reference="NYt-np-D1I"/>
                                 <include reference="ZhL-7D-4w6"/>
                                 <include reference="ox6-ef-SfI"/>
+                                <include reference="6yn-eI-fy2"/>
+                                <include reference="S3S-2b-FJW"/>
+                                <include reference="zuR-XU-cdr"/>
+                                <include reference="Asb-6x-Bri"/>
+                                <include reference="PhR-Ij-YKw"/>
                             </mask>
                         </variation>
                     </view>
@@ -166,6 +194,7 @@
                         <outlet property="resultTableView" destination="6MI-F4-Xig" id="CrC-WE-gaC"/>
                         <outlet property="resultViewLeadingConstraint" destination="6yn-eI-fy2" id="FO2-ak-ATC"/>
                         <outlet property="resultViewTopConstraint" destination="zuR-XU-cdr" id="GON-xv-OqN"/>
+                        <outlet property="searchParametersViewTrailingConstraint" destination="hK4-os-cJj" id="1Pi-cc-7V1"/>
                         <outlet property="videoViewBottomConstraint" destination="Asb-6x-Bri" id="eKh-ts-rSQ"/>
                         <outlet property="videoViewTrailingConstraint" destination="NYt-np-D1I" id="ZD8-QN-5Dn"/>
                     </connections>

@@ -23,6 +23,11 @@ class ViewController: UIViewController {
     @IBOutlet weak var resultViewLeadingConstraint: NSLayoutConstraint!
     
     
+    @IBOutlet weak var searchParametersViewTrailingConstraint: NSLayoutConstraint!
+    
+    
+    
+    
     @IBOutlet weak var resultTableView: UITableView!
     
     override func viewDidLoad() {
@@ -52,7 +57,7 @@ class ViewController: UIViewController {
             videoViewTrailingConstraint.constant = (viewWidth/2.0)
             videoViewBottomConstraint.constant = 0
             
-            
+            searchParametersViewTrailingConstraint.constant = (viewWidth/2.0)
             
             resultViewLeadingConstraint.constant = (viewWidth/2.0)
             resultViewTopConstraint.constant = 0
@@ -61,6 +66,7 @@ class ViewController: UIViewController {
             videoViewBottomConstraint.constant = (viewHeight/2.0)
             videoViewTrailingConstraint.constant = -padding
             
+            searchParametersViewTrailingConstraint.constant = -padding
             
             resultViewLeadingConstraint.constant = -padding
             resultViewTopConstraint.constant = (viewHeight/2.0)
