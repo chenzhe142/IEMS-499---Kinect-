@@ -120,22 +120,10 @@ class ViewController: UIViewController, UITableViewDelegate {
     func tableView(tableView: UITableView!,
         cellForRowAtIndexPath indexPath: NSIndexPath!) -> UITableViewCell!
     {
-//        let cell:UITableViewCell = UITableViewCell(style:UITableViewCellStyle.Default, reuseIdentifier:"Cell")
-//        cell.textLabel?.text = tableData[indexPath.row]
-//        
-//        return cell
         var cell = tableView.dequeueReusableCellWithIdentifier("cell") as ResultTableViewCell
-        
-//        cell.playVideo.tag = indexPath.row
-//        cell.playVideo.addTarget(self, action: "playVideoInCell", forControlEvents: UIControlEvents.TouchUpInside)
-        
         let singleResult = arrayOfResults[indexPath.row]
         
         cell.setCell(singleResult.kinectNumber, startTimeText: singleResult.startTime, endTimeText: singleResult.endTime, videoPathText: singleResult.videoPath)
-        
-        
-
-        
         return cell
     }
     
@@ -162,6 +150,10 @@ class ViewController: UIViewController, UITableViewDelegate {
             println(result1.videoPath)
             println("play video")
             
+            //set moviePlayer path, using the path in result1
+            
+            
+            //set moviePlayer
             self.moviePlayer.view.frame = self.videoView.bounds
             self.moviePlayer.scalingMode = MPMovieScalingMode.AspectFit
             self.moviePlayer.controlStyle = MPMovieControlStyle.Embedded
@@ -197,19 +189,6 @@ class ViewController: UIViewController, UITableViewDelegate {
         moviePlayer.prepareToPlay()
         moviePlayer.play()
     }
-    
-    func playVideoInCell(sender: AnyObject) {
-        
-        var button: UIButton = sender as UIButton;
-        
-        //use the tag to index the array
-        let result1: result = arrayOfResults[button.tag]
-        
-        var videoPath : String = result1.videoPath
-        print(videoPath)
-    }
-
-    
     
 }
 
