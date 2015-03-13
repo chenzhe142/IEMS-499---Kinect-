@@ -152,6 +152,22 @@ class SearchViewController: UIViewController {
         self.view.endEditing(false)
     }
     
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        // Declare a var of manipulate ViewController
+        var DestViewController:ViewController = segue.destinationViewController as ViewController
+        
+        // send the text to ViewController
+        // DestViewController.roomNumber = roomNumberTextField.text
+        DestViewController.inputRoomNumber = roomNumberTextField.text
+        DestViewController.inputStartTime = startDateTextField.text+" "+startTimeTextField.text
+        // println(startDateTextField.text+startTimeTextField.text)
+        DestViewController.inputEndTime = endDateTextField.text+" "+endTimeTextField.text
+        // println(endDateTextField.text+endTimeTextField.text)
+    }
+    
+    
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
         // Dismiss the keyboard
         self.roomNumberTextField.resignFirstResponder()

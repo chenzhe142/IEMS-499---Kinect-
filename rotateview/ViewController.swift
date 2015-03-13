@@ -11,6 +11,19 @@ import MediaPlayer
 
 class ViewController: UIViewController, UITableViewDelegate {
     
+    
+    var inputRoomNumber: String!
+    
+    var inputStartTime:String! //= "2015-01-10 00:00:00"
+    var inputEndTime:String! //= "2015-02-11 00:00:00"
+    var instarttime: Int? //= 20150110000000
+    var inendtime: Int? //= 20150211000000
+    
+    
+    
+    
+    
+    
     //test data for custom cell
     let tableData = ["One","Two","Three"]
     var arrayOfResults: [result] = [result]()
@@ -69,6 +82,8 @@ class ViewController: UIViewController, UITableViewDelegate {
         //add data to arrayOfResults
         self.setupResults()
         
+        
+        println(self.inputRoomNumber)
         
         
     }
