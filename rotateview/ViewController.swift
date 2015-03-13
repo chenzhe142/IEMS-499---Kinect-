@@ -37,14 +37,16 @@ class ViewController: UIViewController, UITableViewDelegate {
     @IBOutlet weak var videoViewTrailingConstraint: NSLayoutConstraint!
     @IBOutlet weak var videoViewBottomConstraint: NSLayoutConstraint!
     
-    
     @IBOutlet weak var resultViewTopConstraint: NSLayoutConstraint!
     @IBOutlet weak var resultViewLeadingConstraint: NSLayoutConstraint!
     
     @IBOutlet weak var searchParametersViewTrailingConstraint: NSLayoutConstraint!
     
     
-    //button trigger segue
+    //ui label, show search parameters
+    @IBOutlet weak var roomLabel: UILabel!
+    @IBOutlet weak var timeLabel: UILabel!
+    
     
     
     //ui view
@@ -62,53 +64,27 @@ class ViewController: UIViewController, UITableViewDelegate {
         if self.inputEndTime == " " {
             self.inputEndTime = "2050-01-10 00:00:00"
         }
+        if self.id == " " {
+            self.id = "0"
+        }
         
+        //show parameters at the top of search result view
+        roomLabel.text = "Room: " + self.id
+        timeLabel.text = "Time: " + self.inputStartTime + " - " + self.inputEndTime
+
         
+        //get json data
         data = dataOfJson("http://129.105.36.214/iosserver.php?id=\(self.id)&StartTime=\(self.inputStartTime)&EndTime=\(self.inputEndTime)")
         
-        
-        
-        
-        
-        
-        
-        
-        //set up video player path
-        let url = NSURL(string: "http://129.105.36.214/iosserver.php?StartTime=2015-02-13%2000:00:00&EndTime=2015-02-23%2023:00:00")
-        var error: NSError?
-        let html = NSString(contentsOfURL: url!, encoding: NSUTF8StringEncoding, error: &error)
-        
-//        var str = (html as String).componentsSeparatedByString("<br>")
-//        //println(str)
-//        
-//        var url_1: String = str[1]
-//        url_1 = (url_1 as NSString).substringFromIndex(1)
-//        //println(url_1)
-//        
-//        var baseurl = "http://129.105.36.214/webfile"
-//        baseurl = baseurl + url_1
-//        println(baseurl)
-
-//        var baseurl = "http://129.105.36.214/webfile/testvideo/galaxy1.mp4"
-//        
-//        var playurl:NSURL = NSURL(string: baseurl)!
-//        
-//        moviePlayer = MPMoviePlayerController(contentURL: playurl)
-        
-        
-        
-        //add data to arrayOfResults
-        //self.setupResults()
         self.setUpVideoRecord()
-        
-        println(self.id)
-        
-        
     }
     
     
     ////////////////////////////////////////////////
     // This part is for querying data from server
+    //
+    // Method: Json
+    //
     ////////////////////////////////////////////////
     
     // Store data in a dictionary
@@ -119,7 +95,6 @@ class ViewController: UIViewController, UITableViewDelegate {
             
             let dictionary:[String:String] = onedata as [String:String]
             
-            //var videoRecord = VideoRecord(RoomNumber: dictionary["RoomNumber"]!, PatientName: dictionary["PatientName"]!, Path: dictionary["Path"]!, StartTime: dictionary["StartTime"]!, EndTime: dictionary["EndTime"]!)
             var videoRecord = VideoRecord(id: dictionary["id"]!, StartTime: dictionary["StartTime"]!, EndTime: dictionary["EndTime"]!, FileName: dictionary["FileName"]!, VideoPath: dictionary["VideoPath"]!, kinect: dictionary["kinect"]!, room: dictionary["room"]!)
             
             println(videoRecord)
@@ -159,14 +134,24 @@ class ViewController: UIViewController, UITableViewDelegate {
     }
     
     ////////////////////////////////////////////////
-    
+    // end of querying server
+    ////////////////////////////////////////////////
     
 
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
 
+    
+    ////////////////////////////////////////////////
+    //
+    // this function is used to adjust the constraints
+    // of each subview
+    //
+    // set both portrait and landscape
+    ////////////////////////////////////////////////
     
     override func willRotateToInterfaceOrientation(toInterfaceOrientation: UIInterfaceOrientation, duration: NSTimeInterval) {
         let padding: CGFloat = 16.0
@@ -201,6 +186,20 @@ class ViewController: UIViewController, UITableViewDelegate {
     }
     
     
+    
+    //////////////////////////////////////////////////
+    //
+    // this part is for table view
+    //
+    // Method: create a custom cell
+    //         use custom cell to show data
+    //
+    // Also created a "Play Video" button using 
+    // -> editActionsForRowAtIndexPath
+    //
+    //////////////////////////////////////////////////
+    
+    
     func tableView(tableView: UITableView!, numberOfRowsInSection section: Int) -> Int
     {
         return self.arrayOfVideo.count;
@@ -215,8 +214,6 @@ class ViewController: UIViewController, UITableViewDelegate {
         let videorecord = self.arrayOfVideo[indexPath.row]
         cell.setCell(videorecord.kinect, startTimeText: videorecord.StartTime, endTimeText: videorecord.EndTime, videoPathText: videorecord.VideoPath, fileNameText: videorecord.FileName, roomNumberText: videorecord.room)
         
-        
-        //cell.setCell(singleResult.kinectNumber, startTimeText: singleResult.startTime, endTimeText: singleResult.endTime, videoPathText: singleResult.videoPath)
         return cell
     }
     
@@ -269,7 +266,7 @@ class ViewController: UIViewController, UITableViewDelegate {
     }
 
     
-    
+    //test sample data
     func setupResults() {
         var result1 = result(kinectNumber: 0, startTime: "20202020", endTime: "2020202", videoPath: "blank")
         arrayOfResults.append(result1)

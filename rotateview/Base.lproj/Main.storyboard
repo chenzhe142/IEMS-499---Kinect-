@@ -41,16 +41,44 @@
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M1F-ch-cIN" userLabel="Search parameters">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="room" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cDd-1f-oTL">
+                                        <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                        <variation key="widthClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="17" y="0.0" width="66" height="21"/>
+                                        </variation>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="time" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1sj-wS-vmu">
+                                        <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                        <variation key="widthClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="17" y="16" width="354" height="21"/>
+                                        </variation>
+                                    </label>
+                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="37" id="Ggq-1t-dh0"/>
                                 </constraints>
                                 <variation key="default">
+                                    <mask key="subviews">
+                                        <exclude reference="cDd-1f-oTL"/>
+                                        <exclude reference="1sj-wS-vmu"/>
+                                    </mask>
                                     <mask key="constraints">
                                         <exclude reference="Ggq-1t-dh0"/>
                                     </mask>
                                 </variation>
                                 <variation key="widthClass=compact">
+                                    <mask key="subviews">
+                                        <include reference="cDd-1f-oTL"/>
+                                        <include reference="1sj-wS-vmu"/>
+                                    </mask>
                                     <mask key="constraints">
                                         <include reference="Ggq-1t-dh0"/>
                                     </mask>
@@ -182,7 +210,9 @@
                         <outlet property="resultTableView" destination="6MI-F4-Xig" id="CrC-WE-gaC"/>
                         <outlet property="resultViewLeadingConstraint" destination="6yn-eI-fy2" id="FO2-ak-ATC"/>
                         <outlet property="resultViewTopConstraint" destination="zuR-XU-cdr" id="GON-xv-OqN"/>
+                        <outlet property="roomLabel" destination="cDd-1f-oTL" id="zah-Rt-uD5"/>
                         <outlet property="searchParametersViewTrailingConstraint" destination="hK4-os-cJj" id="1Pi-cc-7V1"/>
+                        <outlet property="timeLabel" destination="1sj-wS-vmu" id="uD3-ia-Pmh"/>
                         <outlet property="videoView" destination="RZz-oA-Av5" id="BJb-BO-fak"/>
                         <outlet property="videoViewBottomConstraint" destination="Asb-6x-Bri" id="eKh-ts-rSQ"/>
                         <outlet property="videoViewTrailingConstraint" destination="NYt-np-D1I" id="ZD8-QN-5Dn"/>
