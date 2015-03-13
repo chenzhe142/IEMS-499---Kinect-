@@ -563,10 +563,14 @@
                         <outlet property="EndDateTextField" destination="hlY-gP-eJq" id="gBx-Gl-6ny"/>
                         <outlet property="EndTimeTextField" destination="N8L-HK-yVg" id="bhH-EQ-VtR"/>
                         <outlet property="StartTimeTextField" destination="dtI-X2-7BR" id="4ab-gy-Yqs"/>
+                        <outlet property="endDatePicker" destination="6A4-TL-f7z" id="xCb-pY-Ege"/>
                         <outlet property="endDateTextField" destination="hlY-gP-eJq" id="eaY-OO-gVc"/>
+                        <outlet property="endTimePicker" destination="jy4-Fe-FZ8" id="cUP-fa-ohG"/>
                         <outlet property="endTimeTextField" destination="N8L-HK-yVg" id="5m7-4L-bhV"/>
                         <outlet property="roomNumberTextField" destination="jWv-jg-aLA" id="Vr4-oz-q6P"/>
+                        <outlet property="startDatePicker" destination="cKs-hB-tEk" id="6Vk-W5-xeG"/>
                         <outlet property="startDateTextField" destination="P7Y-E3-fiZ" id="AXh-WN-JNp"/>
+                        <outlet property="startTimePicker" destination="zWd-61-0iz" id="4bF-7i-ajf"/>
                         <outlet property="startTimeTextField" destination="dtI-X2-7BR" id="S6F-uS-yOn"/>
                     </connections>
                 </viewController>
