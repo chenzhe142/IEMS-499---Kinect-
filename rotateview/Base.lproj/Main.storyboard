@@ -42,12 +42,6 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M1F-ch-cIN" userLabel="Search parameters">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZzF-0d-O1q">
-                                        <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yfl-uo-19f">
                                         <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                         <state key="normal" title="Button">
@@ -58,36 +52,28 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" red="0.26433205770000001" green="1" blue="0.34355976100000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="37" id="Ggq-1t-dh0"/>
-                                    <constraint firstAttribute="centerX" secondItem="ZzF-0d-O1q" secondAttribute="centerX" id="XN0-Kt-M6U"/>
                                     <constraint firstAttribute="centerY" secondItem="yfl-uo-19f" secondAttribute="centerY" constant="-0.5" id="h1p-hO-KnR"/>
                                     <constraint firstAttribute="centerX" secondItem="yfl-uo-19f" secondAttribute="centerX" id="mUB-1L-8fX"/>
-                                    <constraint firstAttribute="centerY" secondItem="ZzF-0d-O1q" secondAttribute="centerY" id="w7x-r8-Ba0"/>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="subviews">
-                                        <exclude reference="ZzF-0d-O1q"/>
                                         <exclude reference="yfl-uo-19f"/>
                                     </mask>
                                     <mask key="constraints">
                                         <exclude reference="Ggq-1t-dh0"/>
-                                        <exclude reference="XN0-Kt-M6U"/>
-                                        <exclude reference="w7x-r8-Ba0"/>
                                         <exclude reference="h1p-hO-KnR"/>
                                         <exclude reference="mUB-1L-8fX"/>
                                     </mask>
                                 </variation>
                                 <variation key="widthClass=compact">
                                     <mask key="subviews">
-                                        <exclude reference="ZzF-0d-O1q"/>
                                         <include reference="yfl-uo-19f"/>
                                     </mask>
                                     <mask key="constraints">
                                         <include reference="Ggq-1t-dh0"/>
-                                        <include reference="XN0-Kt-M6U"/>
-                                        <include reference="w7x-r8-Ba0"/>
                                         <include reference="h1p-hO-KnR"/>
                                         <include reference="mUB-1L-8fX"/>
                                     </mask>
@@ -114,11 +100,20 @@
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="startTime" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="coj-3h-k7B">
                                                     <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                     <variation key="widthClass=compact" fixedFrame="YES">
                                                         <rect key="frame" x="29" y="37" width="349" height="21"/>
+                                                    </variation>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="room" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IDG-ML-RRS">
+                                                    <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <variation key="widthClass=compact" fixedFrame="YES">
+                                                        <rect key="frame" x="187" y="8" width="127" height="21"/>
                                                     </variation>
                                                 </label>
                                             </subviews>
@@ -126,17 +121,20 @@
                                                 <mask key="subviews">
                                                     <exclude reference="4W9-IK-ws0"/>
                                                     <exclude reference="coj-3h-k7B"/>
+                                                    <exclude reference="IDG-ML-RRS"/>
                                                 </mask>
                                             </variation>
                                             <variation key="widthClass=compact">
                                                 <mask key="subviews">
                                                     <include reference="4W9-IK-ws0"/>
                                                     <include reference="coj-3h-k7B"/>
+                                                    <include reference="IDG-ML-RRS"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="kinectNumber" destination="4W9-IK-ws0" id="cFm-NP-qV3"/>
+                                            <outlet property="roomNumber" destination="IDG-ML-RRS" id="gYw-PO-BJY"/>
                                             <outlet property="startTime" destination="coj-3h-k7B" id="2mD-CM-9s6"/>
                                         </connections>
                                     </tableViewCell>

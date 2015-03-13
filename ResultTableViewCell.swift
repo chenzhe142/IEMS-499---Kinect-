@@ -16,6 +16,7 @@ class ResultTableViewCell: UITableViewCell {
 
     @IBOutlet weak var kinectNumber: UILabel!
     @IBOutlet weak var startTime: UILabel!
+    @IBOutlet weak var roomNumber: UILabel!
 
     
     var videoFilePath: String = "blank"
@@ -34,10 +35,12 @@ class ResultTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func setCell(kinectNumberText: String, startTimeText: String, endTimeText: String, videoPathText: String, fileNameText: String) {
+    func setCell(kinectNumberText: String, startTimeText: String, endTimeText: String, videoPathText: String, fileNameText: String, roomNumberText: String) {
         
         self.kinectNumber.text = "Kinect: " + kinectNumberText
-        self.startTime.text = "Start: " + startTimeText + " - " + endTimeText
+        self.startTime.text = "Time: " + startTimeText + " - " + endTimeText
+        self.roomNumber.text = "Room: " + roomNumberText
+        
         
         self.videoFilePath = videoPathText
         self.fileName = fileNameText

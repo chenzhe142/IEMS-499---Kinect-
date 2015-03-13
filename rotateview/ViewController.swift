@@ -124,7 +124,7 @@ class ViewController: UIViewController, UITableViewDelegate {
             let dictionary:[String:String] = onedata as [String:String]
             
             //var videoRecord = VideoRecord(RoomNumber: dictionary["RoomNumber"]!, PatientName: dictionary["PatientName"]!, Path: dictionary["Path"]!, StartTime: dictionary["StartTime"]!, EndTime: dictionary["EndTime"]!)
-            var videoRecord = VideoRecord(id: dictionary["id"]!, StartTime: dictionary["StartTime"]!, EndTime: dictionary["EndTime"]!, FileName: dictionary["FileName"]!, VideoPath: dictionary["VideoPath"]!, kinect: dictionary["kinect"]!)
+            var videoRecord = VideoRecord(id: dictionary["id"]!, StartTime: dictionary["StartTime"]!, EndTime: dictionary["EndTime"]!, FileName: dictionary["FileName"]!, VideoPath: dictionary["VideoPath"]!, kinect: dictionary["kinect"]!, room: dictionary["room"]!)
             
             println(videoRecord)
             self.arrayOfVideo.append(videoRecord)
@@ -217,7 +217,7 @@ class ViewController: UIViewController, UITableViewDelegate {
         //let singleResult = arrayOfResults[indexPath.row]
         
         let videorecord = self.arrayOfVideo[indexPath.row]
-        cell.setCell(videorecord.kinect, startTimeText: videorecord.StartTime, endTimeText: videorecord.EndTime, videoPathText: videorecord.VideoPath, fileNameText: videorecord.FileName)
+        cell.setCell(videorecord.kinect, startTimeText: videorecord.StartTime, endTimeText: videorecord.EndTime, videoPathText: videorecord.VideoPath, fileNameText: videorecord.FileName, roomNumberText: videorecord.room)
         
         
         //cell.setCell(singleResult.kinectNumber, startTimeText: singleResult.startTime, endTimeText: singleResult.endTime, videoPathText: singleResult.videoPath)
@@ -265,7 +265,7 @@ class ViewController: UIViewController, UITableViewDelegate {
             self.moviePlayer.play()
         }
         
-        let playVideoAction = UITableViewRowAction(style: .Default, title: "Play", handler: playVideoClosure)
+        let playVideoAction = UITableViewRowAction(style: .Default, title: "Play Video", handler: playVideoClosure)
         
         playVideoAction.backgroundColor = UIColor(red: 0.4157, green: 0.212, blue: 0.5373, alpha: 1.0)
         

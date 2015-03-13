@@ -31,14 +31,16 @@ class VideoRecord {
     var FileName: String!
     var VideoPath: String!
     var kinect: String!
+    var room: String!
     
-    init(id:String, StartTime: String, EndTime: String, FileName: String, VideoPath: String, kinect: String ) {
+    init(id:String, StartTime: String, EndTime: String, FileName: String, VideoPath: String, kinect: String, room: String ) {
         self.id = id
         self.StartTime = StartTime
         self.EndTime = EndTime
         self.FileName = FileName
         self.VideoPath = VideoPath
         self.kinect = kinect
+        self.room = room
     }
 
 }

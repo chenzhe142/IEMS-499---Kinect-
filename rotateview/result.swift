@@ -14,6 +14,7 @@ class result {
     var startTime = "blank"
     var endTime = "blank"
     var videoPath = "blank"
+    var roomNumber = "0"
     
     init(kinectNumber: Int, startTime: String, endTime: String, videoPath: String) {
 
