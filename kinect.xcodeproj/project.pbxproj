@@ -35,7 +35,7 @@
 		EA7731E21AB20815003D6A11 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		EA7732981AB28970003D6A11 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchViewController.swift; path = ../SearchViewController.swift; sourceTree = "<group>"; };
 		EA77329A1AB28F6B003D6A11 /* VideoRecord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoRecord.swift; sourceTree = "<group>"; };
-		EAAE60971AB13855005B669B /* rotateview.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = rotateview.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EAAE60971AB13855005B669B /* kinect.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = kinect.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAAE609B1AB13855005B669B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EAAE609C1AB13855005B669B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EAAE609F1AB13855005B669B /* rotateview.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = rotateview.xcdatamodel; sourceTree = "<group>"; };
@@ -43,7 +43,7 @@
 		EAAE60A41AB13855005B669B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EAAE60A61AB13855005B669B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		EAAE60A91AB13855005B669B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		EAAE60AF1AB13856005B669B /* rotateviewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = rotateviewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EAAE60AF1AB13856005B669B /* kinectTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = kinectTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAAE60B41AB13856005B669B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EAAE60B51AB13856005B669B /* rotateviewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rotateviewTests.swift; sourceTree = "<group>"; };
 		EAAE60BF1AB13C20005B669B /* ResultTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ResultTableViewCell.swift; path = ../ResultTableViewCell.swift; sourceTree = "<group>"; };
@@ -82,8 +82,8 @@
 		EAAE60981AB13855005B669B /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				EAAE60971AB13855005B669B /* rotateview.app */,
-				EAAE60AF1AB13856005B669B /* rotateviewTests.xctest */,
+				EAAE60971AB13855005B669B /* kinect.app */,
+				EAAE60AF1AB13856005B669B /* kinectTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -134,9 +134,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		EAAE60961AB13855005B669B /* rotateview */ = {
+		EAAE60961AB13855005B669B /* kinect */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = EAAE60B91AB13856005B669B /* Build configuration list for PBXNativeTarget "rotateview" */;
+			buildConfigurationList = EAAE60B91AB13856005B669B /* Build configuration list for PBXNativeTarget "kinect" */;
 			buildPhases = (
 				EAAE60931AB13855005B669B /* Sources */,
 				EAAE60941AB13855005B669B /* Frameworks */,
@@ -146,14 +146,14 @@
 			);
 			dependencies = (
 			);
-			name = rotateview;
+			name = kinect;
 			productName = rotateview;
-			productReference = EAAE60971AB13855005B669B /* rotateview.app */;
+			productReference = EAAE60971AB13855005B669B /* kinect.app */;
 			productType = "com.apple.product-type.application";
 		};
-		EAAE60AE1AB13856005B669B /* rotateviewTests */ = {
+		EAAE60AE1AB13856005B669B /* kinectTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = EAAE60BC1AB13856005B669B /* Build configuration list for PBXNativeTarget "rotateviewTests" */;
+			buildConfigurationList = EAAE60BC1AB13856005B669B /* Build configuration list for PBXNativeTarget "kinectTests" */;
 			buildPhases = (
 				EAAE60AB1AB13856005B669B /* Sources */,
 				EAAE60AC1AB13856005B669B /* Frameworks */,
@@ -164,9 +164,9 @@
 			dependencies = (
 				EAAE60B11AB13856005B669B /* PBXTargetDependency */,
 			);
-			name = rotateviewTests;
+			name = kinectTests;
 			productName = rotateviewTests;
-			productReference = EAAE60AF1AB13856005B669B /* rotateviewTests.xctest */;
+			productReference = EAAE60AF1AB13856005B669B /* kinectTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -187,7 +187,7 @@
 					};
 				};
 			};
-			buildConfigurationList = EAAE60921AB13855005B669B /* Build configuration list for PBXProject "rotateview" */;
+			buildConfigurationList = EAAE60921AB13855005B669B /* Build configuration list for PBXProject "kinect" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -200,8 +200,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				EAAE60961AB13855005B669B /* rotateview */,
-				EAAE60AE1AB13856005B669B /* rotateviewTests */,
+				EAAE60961AB13855005B669B /* kinect */,
+				EAAE60AE1AB13856005B669B /* kinectTests */,
 			);
 		};
 /* End PBXProject section */
@@ -254,7 +254,7 @@
 /* Begin PBXTargetDependency section */
 		EAAE60B11AB13856005B669B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = EAAE60961AB13855005B669B /* rotateview */;
+			target = EAAE60961AB13855005B669B /* kinect */;
 			targetProxy = EAAE60B01AB13856005B669B /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -362,7 +362,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = rotateview/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = kinect;
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 			};
 			name = Debug;
@@ -373,7 +373,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = rotateview/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = kinect;
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 			};
 			name = Release;
@@ -392,8 +392,8 @@
 				);
 				INFOPLIST_FILE = rotateviewTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/rotateview.app/rotateview";
+				PRODUCT_NAME = kinectTests;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/kinect.app/kinect";
 			};
 			name = Debug;
 		};
@@ -407,15 +407,15 @@
 				);
 				INFOPLIST_FILE = rotateviewTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/rotateview.app/rotateview";
+				PRODUCT_NAME = kinectTests;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/kinect.app/kinect";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		EAAE60921AB13855005B669B /* Build configuration list for PBXProject "rotateview" */ = {
+		EAAE60921AB13855005B669B /* Build configuration list for PBXProject "kinect" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				EAAE60B71AB13856005B669B /* Debug */,
@@ -424,7 +424,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		EAAE60B91AB13856005B669B /* Build configuration list for PBXNativeTarget "rotateview" */ = {
+		EAAE60B91AB13856005B669B /* Build configuration list for PBXNativeTarget "kinect" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				EAAE60BA1AB13856005B669B /* Debug */,
@@ -433,7 +433,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		EAAE60BC1AB13856005B669B /* Build configuration list for PBXNativeTarget "rotateviewTests" */ = {
+		EAAE60BC1AB13856005B669B /* Build configuration list for PBXNativeTarget "kinectTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				EAAE60BD1AB13856005B669B /* Debug */,

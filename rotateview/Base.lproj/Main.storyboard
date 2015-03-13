@@ -26,7 +26,7 @@
         <!--Search Result-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="rotateview" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="kinect" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
@@ -88,7 +88,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" restorationIdentifier="cell" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="72" id="4aN-Nw-YV7" customClass="ResultTableViewCell" customModule="rotateview" customModuleProvider="target">
+                                    <tableViewCell contentMode="scaleToFill" restorationIdentifier="cell" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="72" id="4aN-Nw-YV7" customClass="ResultTableViewCell" customModule="kinect" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4aN-Nw-YV7" id="5Nc-xi-Uo6">
@@ -225,7 +225,7 @@
         <!--Search-->
         <scene sceneID="2dG-wo-1GW">
             <objects>
-                <viewController id="4aD-0h-7vz" customClass="SearchViewController" customModule="rotateview" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="4aD-0h-7vz" customClass="SearchViewController" customModule="kinect" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="IiO-GM-ahe"/>
                         <viewControllerLayoutGuide type="bottom" id="jhK-Vl-aPf"/>
@@ -501,6 +501,9 @@
                                 <exclude reference="HXG-3D-Jii"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="JFB-kl-w1O"/>
+                                <exclude reference="YC5-It-mg9"/>
+                                <exclude reference="Vzj-La-9kf"/>
                                 <exclude reference="MIC-hL-YwI"/>
                                 <exclude reference="hUA-qN-biO"/>
                                 <exclude reference="qPf-Mx-jsn"/>
@@ -509,9 +512,6 @@
                                 <exclude reference="EWF-Bg-kNa"/>
                                 <exclude reference="FSx-c5-QBG"/>
                                 <exclude reference="WJ3-e8-eqf"/>
-                                <exclude reference="Vzj-La-9kf"/>
-                                <exclude reference="JFB-kl-w1O"/>
-                                <exclude reference="YC5-It-mg9"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -522,6 +522,9 @@
                                 <include reference="HXG-3D-Jii"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="JFB-kl-w1O"/>
+                                <include reference="YC5-It-mg9"/>
+                                <include reference="Vzj-La-9kf"/>
                                 <include reference="MIC-hL-YwI"/>
                                 <include reference="hUA-qN-biO"/>
                                 <include reference="qPf-Mx-jsn"/>
@@ -530,9 +533,6 @@
                                 <include reference="EWF-Bg-kNa"/>
                                 <include reference="FSx-c5-QBG"/>
                                 <include reference="WJ3-e8-eqf"/>
-                                <include reference="Vzj-La-9kf"/>
-                                <include reference="JFB-kl-w1O"/>
-                                <include reference="YC5-It-mg9"/>
                             </mask>
                         </variation>
                     </view>
