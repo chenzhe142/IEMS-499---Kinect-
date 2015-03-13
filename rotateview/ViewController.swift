@@ -93,11 +93,11 @@ class ViewController: UIViewController, UITableViewDelegate {
 //        baseurl = baseurl + url_1
 //        println(baseurl)
 
-        var baseurl = "http://129.105.36.214/webfile/testvideo/galaxy1.mp4"
-        
-        var playurl:NSURL = NSURL(string: baseurl)!
-        
-        moviePlayer = MPMoviePlayerController(contentURL: playurl)
+//        var baseurl = "http://129.105.36.214/webfile/testvideo/galaxy1.mp4"
+//        
+//        var playurl:NSURL = NSURL(string: baseurl)!
+//        
+//        moviePlayer = MPMoviePlayerController(contentURL: playurl)
         
         
         
@@ -124,7 +124,7 @@ class ViewController: UIViewController, UITableViewDelegate {
             let dictionary:[String:String] = onedata as [String:String]
             
             //var videoRecord = VideoRecord(RoomNumber: dictionary["RoomNumber"]!, PatientName: dictionary["PatientName"]!, Path: dictionary["Path"]!, StartTime: dictionary["StartTime"]!, EndTime: dictionary["EndTime"]!)
-            var videoRecord = VideoRecord(id: dictionary["id"]!, StartTime: dictionary["StartTime"]!, EndTime: dictionary["EndTime"]!, FileName: dictionary["FileName"]!, VideoPath: dictionary["VideoPath"]!)
+            var videoRecord = VideoRecord(id: dictionary["id"]!, StartTime: dictionary["StartTime"]!, EndTime: dictionary["EndTime"]!, FileName: dictionary["FileName"]!, VideoPath: dictionary["VideoPath"]!, kinect: dictionary["kinect"]!)
             
             println(videoRecord)
             self.arrayOfVideo.append(videoRecord)
@@ -217,7 +217,7 @@ class ViewController: UIViewController, UITableViewDelegate {
         //let singleResult = arrayOfResults[indexPath.row]
         
         let videorecord = self.arrayOfVideo[indexPath.row]
-        cell.setCell(videorecord.id, startTimeText: videorecord.StartTime, endTimeText: videorecord.EndTime, videoPathText: videorecord.VideoPath, fileNameText: videorecord.FileName)
+        cell.setCell(videorecord.kinect, startTimeText: videorecord.StartTime, endTimeText: videorecord.EndTime, videoPathText: videorecord.VideoPath, fileNameText: videorecord.FileName)
         
         
         //cell.setCell(singleResult.kinectNumber, startTimeText: singleResult.startTime, endTimeText: singleResult.endTime, videoPathText: singleResult.videoPath)
@@ -242,13 +242,17 @@ class ViewController: UIViewController, UITableViewDelegate {
     func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [AnyObject]? {
         
         let playVideoClosure = { (action: UITableViewRowAction!, indexPath: NSIndexPath!) -> Void in
-            var result1: result = self.arrayOfResults[indexPath.row]
+            var result1: VideoRecord = self.arrayOfVideo[indexPath.row]
             
-            println(result1.videoPath)
+            println(result1.VideoPath)
             println("play video")
             
             //set moviePlayer path, using the path in result1
+            var baseurl = result1.VideoPath.stringByReplacingOccurrencesOfString("./", withString: "webfile/")
+            baseurl = "http://129.105.36.214/" + baseurl
+            var playurl:NSURL = NSURL(string: baseurl)!
             
+            self.moviePlayer = MPMoviePlayerController(contentURL: playurl)
             
             //set moviePlayer
             self.moviePlayer.view.frame = self.videoView.bounds

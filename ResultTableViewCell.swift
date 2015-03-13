@@ -16,8 +16,7 @@ class ResultTableViewCell: UITableViewCell {
 
     @IBOutlet weak var kinectNumber: UILabel!
     @IBOutlet weak var startTime: UILabel!
-    @IBOutlet weak var endTime: UILabel!
-    @IBOutlet weak var videoPath: UILabel!
+
     
     var videoFilePath: String = "blank"
     var fileName: String = "blank space"
@@ -37,10 +36,9 @@ class ResultTableViewCell: UITableViewCell {
     
     func setCell(kinectNumberText: String, startTimeText: String, endTimeText: String, videoPathText: String, fileNameText: String) {
         
-        self.kinectNumber.text = kinectNumberText
-        self.startTime.text = startTimeText
-        self.endTime.text = endTimeText
-        self.videoPath.text = videoPathText
+        self.kinectNumber.text = "Kinect: " + kinectNumberText
+        self.startTime.text = "Start: " + startTimeText + " - " + endTimeText
+        
         self.videoFilePath = videoPathText
         self.fileName = fileNameText
     }
