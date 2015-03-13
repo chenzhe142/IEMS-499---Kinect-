@@ -12,12 +12,14 @@ import QuartzCore
 class ResultTableViewCell: UITableViewCell {
     
     
-    @IBOutlet weak var kinectNumber: UILabel!
+
+    @IBOutlet weak var roomNumber: UILabel!
     @IBOutlet weak var startTime: UILabel!
     @IBOutlet weak var endTime: UILabel!
     @IBOutlet weak var videoPath: UILabel!
     
     var videoFilePath: String = "blank"
+    var fileName: String = "blank space"
 
 
 
@@ -32,12 +34,13 @@ class ResultTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func setCell(kinectNumberInt: Int, startTimeText: String, endTimeText: String, videoPathText: String) {
+    func setCell(roomNumberText: String, startTimeText: String, endTimeText: String, videoPathText: String, fileNameText: String) {
         
-        self.kinectNumber.text = String(kinectNumberInt)
+        self.roomNumber.text = roomNumberText
         self.startTime.text = startTimeText
         self.endTime.text = endTimeText
         self.videoPath.text = videoPathText
         self.videoFilePath = videoPathText
+        self.fileName = fileNameText
     }
 }

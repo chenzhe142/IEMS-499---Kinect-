@@ -20,6 +20,9 @@ class ViewController: UIViewController, UITableViewDelegate {
     var inendtime: Int? //= 20150211000000
     
     
+    //store queried information
+    var data: NSArray = []
+    var arrayOfVideo: [VideoRecord] = [VideoRecord]()
     
     
     
@@ -45,6 +48,8 @@ class ViewController: UIViewController, UITableViewDelegate {
     @IBOutlet weak var searchParametersViewTrailingConstraint: NSLayoutConstraint!
     
     
+    //button trigger segue
+    
     
     //ui view
     @IBOutlet weak var resultTableView: UITableView!
@@ -53,6 +58,23 @@ class ViewController: UIViewController, UITableViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        //input sanity check
+        if self.inputStartTime == " " {
+            self.inputStartTime = "1990-01-10 00:00:00"
+        }
+        if self.inputEndTime == " " {
+            self.inputEndTime = "2050-01-10 00:00:00"
+        }
+        
+        
+//        data = dataOfJson("http://129.105.36.214/iosserver.php?id=\(self.inputRoomNumber)&StartTime=\(self.inputStartTime)&EndTime=\(self.inputEndTime)")
+        
+        
+        
+        
+        
+        
         
         
         //set up video player path
@@ -80,13 +102,69 @@ class ViewController: UIViewController, UITableViewDelegate {
         
         
         //add data to arrayOfResults
-        self.setupResults()
-        
+        //self.setupResults()
+        //self.setUpVideoRecord()
         
         println(self.inputRoomNumber)
         
         
     }
+    
+    
+    ////////////////////////////////////////////////
+    // This part is for querying data from server
+    ////////////////////////////////////////////////
+    
+    // Store data in a dictionary
+    func setUpVideoRecord() {
+        
+        // Loop through each dictionary in the array
+        for onedata in data {
+            
+            let dictionary:[String:String] = onedata as [String:String]
+            
+            //var videoRecord = VideoRecord(RoomNumber: dictionary["RoomNumber"]!, PatientName: dictionary["PatientName"]!, Path: dictionary["Path"]!, StartTime: dictionary["StartTime"]!, EndTime: dictionary["EndTime"]!)
+            var videoRecord = VideoRecord(roomNumber: dictionary["roomNumber"]!, StartTime: dictionary["StartTime"]!, EndTime: dictionary["EndTime"]!, FileName: dictionary["FileName"]!, VideoPath: dictionary["VideoPath"]!)
+            
+            println(videoRecord)
+            self.arrayOfVideo.append(videoRecord)
+            
+        }
+        
+        // println(self.messagesArray)
+        
+    }
+    
+    // Convert TIME to be purely numbers
+    func processString(oldStr: String) -> Int {
+        
+        var newStr = ""
+        
+        for ch in oldStr {
+            if String(ch)>="0" && String(ch)<="9"{
+                newStr = newStr+String(ch)
+            }
+        }
+        
+        var timenumber = newStr.toInt()
+        
+        return timenumber!
+    }
+    
+    func dataOfJson(url: String) -> NSArray {
+        
+        var url = url.stringByReplacingOccurrencesOfString(" ", withString: "%20")
+        
+        // println(url)
+        
+        var data = NSData(contentsOfURL: NSURL(string: url)!)
+        
+        return (NSJSONSerialization.JSONObjectWithData(data!, options: nil, error: nil) as NSArray)
+    }
+    
+    ////////////////////////////////////////////////
+    
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -129,16 +207,20 @@ class ViewController: UIViewController, UITableViewDelegate {
     
     func tableView(tableView: UITableView!, numberOfRowsInSection section: Int) -> Int
     {
-        return self.arrayOfResults.count;
+        return self.arrayOfVideo.count;
     }
     
     func tableView(tableView: UITableView!,
         cellForRowAtIndexPath indexPath: NSIndexPath!) -> UITableViewCell!
     {
         var cell = tableView.dequeueReusableCellWithIdentifier("cell") as ResultTableViewCell
-        let singleResult = arrayOfResults[indexPath.row]
+        //let singleResult = arrayOfResults[indexPath.row]
         
-        cell.setCell(singleResult.kinectNumber, startTimeText: singleResult.startTime, endTimeText: singleResult.endTime, videoPathText: singleResult.videoPath)
+        let videorecord = self.arrayOfVideo[indexPath.row]
+        cell.setCell(videorecord.roomNumber, startTimeText: videorecord.StartTime, endTimeText: videorecord.EndTime, videoPathText: videorecord.VideoPath, fileNameText: videorecord.FileName)
+        
+        
+        //cell.setCell(singleResult.kinectNumber, startTimeText: singleResult.startTime, endTimeText: singleResult.endTime, videoPathText: singleResult.videoPath)
         return cell
     }
     

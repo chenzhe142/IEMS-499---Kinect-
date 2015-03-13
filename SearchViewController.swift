@@ -168,6 +168,9 @@ class SearchViewController: UIViewController {
     }
     
     
+
+    
+    
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
         // Dismiss the keyboard
         self.roomNumberTextField.resignFirstResponder()
