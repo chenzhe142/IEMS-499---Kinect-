@@ -103,15 +103,6 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4aN-Nw-YV7" id="5Nc-xi-Uo6">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="roomNumber" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xvI-bw-lM0">
-                                                    <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                    <variation key="widthClass=compact" fixedFrame="YES">
-                                                        <rect key="frame" x="29" y="8" width="102" height="21"/>
-                                                    </variation>
-                                                </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="startTime" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="coj-3h-k7B">
                                                     <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -139,28 +130,36 @@
                                                         <rect key="frame" x="225" y="36" width="67" height="21"/>
                                                     </variation>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="kinect" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4W9-IK-ws0">
+                                                    <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <variation key="widthClass=compact" fixedFrame="YES">
+                                                        <rect key="frame" x="29" y="8" width="47" height="21"/>
+                                                    </variation>
+                                                </label>
                                             </subviews>
                                             <variation key="default">
                                                 <mask key="subviews">
-                                                    <exclude reference="xvI-bw-lM0"/>
                                                     <exclude reference="coj-3h-k7B"/>
                                                     <exclude reference="Pff-wu-PdV"/>
                                                     <exclude reference="qCI-Ax-02p"/>
+                                                    <exclude reference="4W9-IK-ws0"/>
                                                 </mask>
                                             </variation>
                                             <variation key="widthClass=compact">
                                                 <mask key="subviews">
-                                                    <include reference="xvI-bw-lM0"/>
                                                     <include reference="coj-3h-k7B"/>
                                                     <include reference="Pff-wu-PdV"/>
                                                     <include reference="qCI-Ax-02p"/>
+                                                    <include reference="4W9-IK-ws0"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="endTime" destination="qCI-Ax-02p" id="r8h-Y4-3DP"/>
-                                            <outlet property="kinectNumber" destination="xvI-bw-lM0" id="92X-8E-Sdh"/>
-                                            <outlet property="roomNumber" destination="xvI-bw-lM0" id="vUh-mo-1JV"/>
+                                            <outlet property="kinectNumber" destination="4W9-IK-ws0" id="cFm-NP-qV3"/>
                                             <outlet property="startTime" destination="coj-3h-k7B" id="2mD-CM-9s6"/>
                                             <outlet property="videoPath" destination="Pff-wu-PdV" id="qpy-cx-HFy"/>
                                         </connections>

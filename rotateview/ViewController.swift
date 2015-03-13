@@ -12,7 +12,7 @@ import MediaPlayer
 class ViewController: UIViewController, UITableViewDelegate {
     
     
-    var inputRoomNumber: String!
+    var id: String!
     
     var inputStartTime:String! //= "2015-01-10 00:00:00"
     var inputEndTime:String! //= "2015-02-11 00:00:00"
@@ -68,7 +68,7 @@ class ViewController: UIViewController, UITableViewDelegate {
         }
         
         
-//        data = dataOfJson("http://129.105.36.214/iosserver.php?id=\(self.inputRoomNumber)&StartTime=\(self.inputStartTime)&EndTime=\(self.inputEndTime)")
+        data = dataOfJson("http://129.105.36.214/iosserver.php?id=\(self.id)&StartTime=\(self.inputStartTime)&EndTime=\(self.inputEndTime)")
         
         
         
@@ -78,7 +78,7 @@ class ViewController: UIViewController, UITableViewDelegate {
         
         
         //set up video player path
-        let url = NSURL(string: "http://129.105.36.214/index2.php?StartTime=2015-02-13%2000:00:00&EndTime=2015-02-23%2023:00:00")
+        let url = NSURL(string: "http://129.105.36.214/iosserver.php?StartTime=2015-02-13%2000:00:00&EndTime=2015-02-23%2023:00:00")
         var error: NSError?
         let html = NSString(contentsOfURL: url!, encoding: NSUTF8StringEncoding, error: &error)
         
@@ -103,9 +103,9 @@ class ViewController: UIViewController, UITableViewDelegate {
         
         //add data to arrayOfResults
         //self.setupResults()
-        //self.setUpVideoRecord()
+        self.setUpVideoRecord()
         
-        println(self.inputRoomNumber)
+        println(self.id)
         
         
     }
@@ -124,7 +124,7 @@ class ViewController: UIViewController, UITableViewDelegate {
             let dictionary:[String:String] = onedata as [String:String]
             
             //var videoRecord = VideoRecord(RoomNumber: dictionary["RoomNumber"]!, PatientName: dictionary["PatientName"]!, Path: dictionary["Path"]!, StartTime: dictionary["StartTime"]!, EndTime: dictionary["EndTime"]!)
-            var videoRecord = VideoRecord(roomNumber: dictionary["roomNumber"]!, StartTime: dictionary["StartTime"]!, EndTime: dictionary["EndTime"]!, FileName: dictionary["FileName"]!, VideoPath: dictionary["VideoPath"]!)
+            var videoRecord = VideoRecord(id: dictionary["id"]!, StartTime: dictionary["StartTime"]!, EndTime: dictionary["EndTime"]!, FileName: dictionary["FileName"]!, VideoPath: dictionary["VideoPath"]!)
             
             println(videoRecord)
             self.arrayOfVideo.append(videoRecord)
@@ -155,7 +155,7 @@ class ViewController: UIViewController, UITableViewDelegate {
         
         var url = url.stringByReplacingOccurrencesOfString(" ", withString: "%20")
         
-        // println(url)
+        println(url)
         
         var data = NSData(contentsOfURL: NSURL(string: url)!)
         
@@ -217,7 +217,7 @@ class ViewController: UIViewController, UITableViewDelegate {
         //let singleResult = arrayOfResults[indexPath.row]
         
         let videorecord = self.arrayOfVideo[indexPath.row]
-        cell.setCell(videorecord.roomNumber, startTimeText: videorecord.StartTime, endTimeText: videorecord.EndTime, videoPathText: videorecord.VideoPath, fileNameText: videorecord.FileName)
+        cell.setCell(videorecord.id, startTimeText: videorecord.StartTime, endTimeText: videorecord.EndTime, videoPathText: videorecord.VideoPath, fileNameText: videorecord.FileName)
         
         
         //cell.setCell(singleResult.kinectNumber, startTimeText: singleResult.startTime, endTimeText: singleResult.endTime, videoPathText: singleResult.videoPath)

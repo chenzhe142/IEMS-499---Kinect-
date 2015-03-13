@@ -160,7 +160,7 @@ class SearchViewController: UIViewController {
         
         // send the text to ViewController
         // DestViewController.roomNumber = roomNumberTextField.text
-        DestViewController.inputRoomNumber = roomNumberTextField.text
+        DestViewController.id = roomNumberTextField.text
         DestViewController.inputStartTime = startDateTextField.text+" "+startTimeTextField.text
         // println(startDateTextField.text+startTimeTextField.text)
         DestViewController.inputEndTime = endDateTextField.text+" "+endTimeTextField.text

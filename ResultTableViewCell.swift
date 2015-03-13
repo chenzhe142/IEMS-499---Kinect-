@@ -13,7 +13,8 @@ class ResultTableViewCell: UITableViewCell {
     
     
 
-    @IBOutlet weak var roomNumber: UILabel!
+
+    @IBOutlet weak var kinectNumber: UILabel!
     @IBOutlet weak var startTime: UILabel!
     @IBOutlet weak var endTime: UILabel!
     @IBOutlet weak var videoPath: UILabel!
@@ -34,9 +35,9 @@ class ResultTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func setCell(roomNumberText: String, startTimeText: String, endTimeText: String, videoPathText: String, fileNameText: String) {
+    func setCell(kinectNumberText: String, startTimeText: String, endTimeText: String, videoPathText: String, fileNameText: String) {
         
-        self.roomNumber.text = roomNumberText
+        self.kinectNumber.text = kinectNumberText
         self.startTime.text = startTimeText
         self.endTime.text = endTimeText
         self.videoPath.text = videoPathText

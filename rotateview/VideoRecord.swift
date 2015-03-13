@@ -25,14 +25,14 @@ class VideoRecord {
         self.EndTime = EndTime
     }*/
     
-    var roomNumber: String!
+    var id: String!
     var StartTime: String!
     var EndTime: String!
     var FileName: String!
     var VideoPath: String!
     
-    init(roomNumber:String, StartTime: String, EndTime: String, FileName: String, VideoPath: String ) {
-        self.roomNumber = roomNumber
+    init(id:String, StartTime: String, EndTime: String, FileName: String, VideoPath: String ) {
+        self.id = id
         self.StartTime = StartTime
         self.EndTime = EndTime
         self.FileName = FileName
