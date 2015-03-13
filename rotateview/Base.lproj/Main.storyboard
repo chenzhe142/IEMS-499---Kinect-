@@ -141,6 +141,7 @@
                                             <outlet property="kinectNumber" destination="4W9-IK-ws0" id="cFm-NP-qV3"/>
                                             <outlet property="roomNumber" destination="IDG-ML-RRS" id="gYw-PO-BJY"/>
                                             <outlet property="startTime" destination="coj-3h-k7B" id="2mD-CM-9s6"/>
+                                            <segue destination="40S-lG-zWg" kind="show" id="QLf-j2-UKH"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -221,6 +222,109 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="495" y="389"/>
+        </scene>
+        <!--Event-->
+        <scene sceneID="V9N-55-58s">
+            <objects>
+                <viewController id="40S-lG-zWg" customClass="DetailEventViewController" customModule="kinect" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="zwe-h6-yvz"/>
+                        <viewControllerLayoutGuide type="bottom" id="dcP-sh-wf3"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="73j-NX-eM4">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="id" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BkB-Zt-OUt">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="39" y="168" width="133" height="21"/>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="time" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ab3-Rq-pI6">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="39" y="219" width="345" height="21"/>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="fileName" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mIr-G1-oDH">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="39" y="331" width="345" height="21"/>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="room" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KXM-Mw-em6">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="39" y="387" width="235" height="21"/>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="kinectNumber" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XKD-U2-ViQ">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="39" y="444" width="273" height="21"/>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="timeContinued" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vox-mM-YK6">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="39" y="269" width="345" height="21"/>
+                                </variation>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="BkB-Zt-OUt"/>
+                                <exclude reference="Ab3-Rq-pI6"/>
+                                <exclude reference="mIr-G1-oDH"/>
+                                <exclude reference="KXM-Mw-em6"/>
+                                <exclude reference="XKD-U2-ViQ"/>
+                                <exclude reference="vox-mM-YK6"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="BkB-Zt-OUt"/>
+                                <include reference="Ab3-Rq-pI6"/>
+                                <include reference="mIr-G1-oDH"/>
+                                <include reference="KXM-Mw-em6"/>
+                                <include reference="XKD-U2-ViQ"/>
+                                <include reference="vox-mM-YK6"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <navigationItem key="navigationItem" title="Event" id="5D6-3p-nI6"/>
+                    <connections>
+                        <outlet property="fileNameTextField" destination="mIr-G1-oDH" id="9Pc-45-DZd"/>
+                        <outlet property="idTextField" destination="BkB-Zt-OUt" id="QN5-0C-ajn"/>
+                        <outlet property="kinectNumberTextField" destination="XKD-U2-ViQ" id="7yl-bJ-iyV"/>
+                        <outlet property="roomTextField" destination="KXM-Mw-em6" id="dlV-sS-g2l"/>
+                        <outlet property="timeContinuedTextField" destination="vox-mM-YK6" id="otk-nv-EZj"/>
+                        <outlet property="timeTextField" destination="Ab3-Rq-pI6" id="SiY-fA-Yes"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="45W-Jq-4AP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1396.5" y="389"/>
         </scene>
         <!--Search-->
         <scene sceneID="2dG-wo-1GW">
@@ -545,6 +649,7 @@
                         <outlet property="endDateTextField" destination="hlY-gP-eJq" id="eaY-OO-gVc"/>
                         <outlet property="endTimePicker" destination="jy4-Fe-FZ8" id="cUP-fa-ohG"/>
                         <outlet property="endTimeTextField" destination="N8L-HK-yVg" id="5m7-4L-bhV"/>
+                        <outlet property="floorNumberTextField" destination="eG3-Ai-05Z" id="lee-kD-TBD"/>
                         <outlet property="roomNumberTextField" destination="jWv-jg-aLA" id="Vr4-oz-q6P"/>
                         <outlet property="startDatePicker" destination="cKs-hB-tEk" id="6Vk-W5-xeG"/>
                         <outlet property="startDateTextField" destination="P7Y-E3-fiZ" id="AXh-WN-JNp"/>

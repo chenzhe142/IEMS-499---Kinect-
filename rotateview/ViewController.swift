@@ -272,7 +272,39 @@ class ViewController: UIViewController, UITableViewDelegate {
         arrayOfResults.append(result1)
     }
     
-    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        //if segue.identifier == "show" {
+            
+            if (self.resultTableView.indexPathForSelectedRow() != nil){
+                
+                var index = self.resultTableView.indexPathForSelectedRow()?.row
+                var record:VideoRecord! = self.arrayOfVideo[index!]
+                
+                if record != nil {
+                    
+                    // Declare a var of manipulate ViewController
+                    var detailEventViewController: DetailEventViewController = segue.destinationViewController as DetailEventViewController
+                    
+                    detailEventViewController.id = "id: " + record.id
+                    detailEventViewController.startTime = "From: " + record.StartTime
+                    detailEventViewController.endTime = "To: " + record.EndTime
+                    detailEventViewController.fileName = "File name: " + record.FileName
+                    detailEventViewController.room = "Room: " + record.room
+                    detailEventViewController.kinectNumber = "Kinect: " + record.kinect
+                    
+                    println(detailEventViewController.kinectNumber)
+                    
+                }
+            }
+        //}
+        
+        
+        
+        
+        
+        // send the text to ViewController
+        
+    }
 
     
 }

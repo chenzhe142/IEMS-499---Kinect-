@@ -21,6 +21,10 @@ class SearchViewController: UIViewController {
     @IBOutlet weak var endTimeTextField: UITextField!
     
     @IBOutlet weak var roomNumberTextField: UITextField!
+    @IBOutlet weak var floorNumberTextField: UITextField!
+    
+    
+    
     
     
     @IBOutlet var startDatePicker: UIDatePicker!
