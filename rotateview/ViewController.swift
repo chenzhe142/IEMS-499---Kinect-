@@ -11,9 +11,11 @@ import MediaPlayer
 
 class ViewController: UIViewController, UITableViewDelegate {
     
-    
+    ///////////////////////////////////////////////////////
+    // these variables are used to get data from segue
+    //
+    ///////////////////////////////////////////////////////
     var id: String!
-    
     var inputStartTime:String! //= "2015-01-10 00:00:00"
     var inputEndTime:String! //= "2015-02-11 00:00:00"
     var instarttime: Int? //= 20150110000000
@@ -25,13 +27,18 @@ class ViewController: UIViewController, UITableViewDelegate {
     var arrayOfVideo: [VideoRecord] = [VideoRecord]()
     
     //test data for custom cell
-    let tableData = ["One","Two","Three"]
-    var arrayOfResults: [result] = [result]()
+    //let tableData = ["One","Two","Three"]
+    //var arrayOfResults: [result] = [result]()
 
     
-    //test ui for movieView
+    //play video
     var moviePlayer: MPMoviePlayerController!
     
+    
+    ///////////////////////////////////////////////////////
+    // UI component
+    //
+    ///////////////////////////////////////////////////////
     
     //view constraint, use to adjust the view when rotating screen.
     @IBOutlet weak var videoViewTrailingConstraint: NSLayoutConstraint!
@@ -42,17 +49,16 @@ class ViewController: UIViewController, UITableViewDelegate {
     
     @IBOutlet weak var searchParametersViewTrailingConstraint: NSLayoutConstraint!
     
-    
     //ui label, show search parameters
     @IBOutlet weak var roomLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
-    
-    
     
     //ui view
     @IBOutlet weak var resultTableView: UITableView!
     @IBOutlet weak var videoView: UIView!
     
+    
+    //initialize view
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -101,9 +107,6 @@ class ViewController: UIViewController, UITableViewDelegate {
             self.arrayOfVideo.append(videoRecord)
             
         }
-        
-        // println(self.messagesArray)
-        
     }
     
     // Convert TIME to be purely numbers
@@ -144,6 +147,8 @@ class ViewController: UIViewController, UITableViewDelegate {
         // Dispose of any resources that can be recreated.
     }
 
+    
+    
     
     ////////////////////////////////////////////////
     //
@@ -266,44 +271,33 @@ class ViewController: UIViewController, UITableViewDelegate {
     }
 
     
-    //test sample data
-    func setupResults() {
-        var result1 = result(kinectNumber: 0, startTime: "20202020", endTime: "2020202", videoPath: "blank")
-        arrayOfResults.append(result1)
-    }
+    ///////////////////////////////////////////////////////
+    //
+    // segue
+    //
+    // pass data to detailEventViewController
+    //
+    ///////////////////////////////////////////////////////
     
+    //use segue to pass data from current view to detailEventViewController
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        //if segue.identifier == "show" {
-            
-            if (self.resultTableView.indexPathForSelectedRow() != nil){
+        if (self.resultTableView.indexPathForSelectedRow() != nil){
+            var index = self.resultTableView.indexPathForSelectedRow()?.row
+            var record:VideoRecord! = self.arrayOfVideo[index!]
                 
-                var index = self.resultTableView.indexPathForSelectedRow()?.row
-                var record:VideoRecord! = self.arrayOfVideo[index!]
-                
-                if record != nil {
+            if record != nil {
                     
-                    // Declare a var of manipulate ViewController
-                    var detailEventViewController: DetailEventViewController = segue.destinationViewController as DetailEventViewController
+                // Declare a var of manipulate ViewController
+                var detailEventViewController: DetailEventViewController = segue.destinationViewController as DetailEventViewController
                     
-                    detailEventViewController.id = "id: " + record.id
-                    detailEventViewController.startTime = "From: " + record.StartTime
-                    detailEventViewController.endTime = "To: " + record.EndTime
-                    detailEventViewController.fileName = "File name: " + record.FileName
-                    detailEventViewController.room = "Room: " + record.room
-                    detailEventViewController.kinectNumber = "Kinect: " + record.kinect
-                    
-                    println(detailEventViewController.kinectNumber)
-                    
-                }
+                detailEventViewController.id = "id: " + record.id
+                detailEventViewController.startTime = "From: " + record.StartTime
+                detailEventViewController.endTime = "To: " + record.EndTime
+                detailEventViewController.fileName = "File name: " + record.FileName
+                detailEventViewController.room = "Room: " + record.room
+                detailEventViewController.kinectNumber = "Kinect: " + record.kinect
             }
-        //}
-        
-        
-        
-        
-        
-        // send the text to ViewController
-        
+        }
     }
 
     

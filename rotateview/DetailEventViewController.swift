@@ -10,6 +10,12 @@ import UIKit
 
 class DetailEventViewController: UIViewController {
     
+    ///////////////////////////////////////////////////////
+    //
+    // using these variables to
+    // receive data from viewController
+    //
+    ///////////////////////////////////////////////////////
     var id: String!
     var startTime: String!
     var endTime: String!
@@ -17,13 +23,13 @@ class DetailEventViewController: UIViewController {
     var room: String!
     var kinectNumber: String!
 
+    
+    ///////////////////////////////////////////////////////
+    // UI components
+    ///////////////////////////////////////////////////////
     @IBOutlet weak var idTextField: UILabel!
     @IBOutlet weak var timeTextField: UILabel!
     @IBOutlet weak var timeContinuedTextField: UILabel!
-
-
-    
-    
     @IBOutlet weak var fileNameTextField: UILabel!
     @IBOutlet weak var roomTextField: UILabel!
     @IBOutlet weak var kinectNumberTextField: UILabel!
