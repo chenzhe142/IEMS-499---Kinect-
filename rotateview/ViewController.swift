@@ -24,16 +24,12 @@ class ViewController: UIViewController, UITableViewDelegate {
     var data: NSArray = []
     var arrayOfVideo: [VideoRecord] = [VideoRecord]()
     
-    
-    
-    
     //test data for custom cell
     let tableData = ["One","Two","Three"]
     var arrayOfResults: [result] = [result]()
 
     
     //test ui for movieView
-    @IBOutlet weak var testPlayer: UIButton!
     var moviePlayer: MPMoviePlayerController!
     
     
@@ -280,16 +276,7 @@ class ViewController: UIViewController, UITableViewDelegate {
     }
     
     
-    @IBAction func playMovie(sender: UIButton) {
-        moviePlayer.view.frame = self.videoView.bounds
-        moviePlayer.scalingMode = MPMovieScalingMode.AspectFit
-        moviePlayer.controlStyle = MPMovieControlStyle.Embedded
-        moviePlayer.shouldAutoplay = true
-        
-        videoView.addSubview(moviePlayer.view)
-        moviePlayer.prepareToPlay()
-        moviePlayer.play()
-    }
+
     
 }
 
