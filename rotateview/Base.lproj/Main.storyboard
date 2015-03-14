@@ -3,7 +3,6 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -232,7 +231,7 @@
                         <viewControllerLayoutGuide type="bottom" id="dcP-sh-wf3"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="73j-NX-eM4">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="id" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BkB-Zt-OUt">
@@ -338,6 +337,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="6pQ-BK-8ST">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                            </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3tm-ho-N6P" userLabel="Time View">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <subviews>
@@ -553,22 +555,6 @@
                                     </mask>
                                 </variation>
                             </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="Axa-1Q-CLG">
-                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="Axa-1Q-CLG" secondAttribute="height" multiplier="25:9" id="oc3-fH-ArX"/>
-                                </constraints>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="oc3-fH-ArX"/>
-                                    </mask>
-                                </variation>
-                                <variation key="widthClass=compact">
-                                    <mask key="constraints">
-                                        <include reference="oc3-fH-ArX"/>
-                                    </mask>
-                                </variation>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HXG-3D-Jii">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <state key="normal" image="SearchButton">
@@ -581,62 +567,65 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="6pQ-BK-8ST" firstAttribute="leading" secondItem="bpq-ZF-1ml" secondAttribute="leadingMargin" constant="-16" id="1ww-s4-gKV"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="6pQ-BK-8ST" secondAttribute="trailing" constant="-16" id="8MQ-yc-66C"/>
                             <constraint firstItem="UFg-lX-sWL" firstAttribute="leading" secondItem="bpq-ZF-1ml" secondAttribute="leadingMargin" constant="-16" id="EWF-Bg-kNa"/>
                             <constraint firstAttribute="trailingMargin" secondItem="3tm-ho-N6P" secondAttribute="trailing" constant="-16" id="FK7-zM-jbf"/>
                             <constraint firstItem="UFg-lX-sWL" firstAttribute="top" secondItem="3tm-ho-N6P" secondAttribute="bottom" constant="30" id="FSx-c5-QBG">
                                 <variation key="widthClass=compact" constant="0.0"/>
                             </constraint>
                             <constraint firstItem="jhK-Vl-aPf" firstAttribute="top" secondItem="HXG-3D-Jii" secondAttribute="bottom" constant="46" id="JFB-kl-w1O"/>
-                            <constraint firstItem="Axa-1Q-CLG" firstAttribute="leading" secondItem="bpq-ZF-1ml" secondAttribute="leadingMargin" constant="-16" id="MIC-hL-YwI"/>
+                            <constraint firstItem="6pQ-BK-8ST" firstAttribute="top" secondItem="IiO-GM-ahe" secondAttribute="bottom" id="OuJ-eK-sy7"/>
                             <constraint firstAttribute="centerX" secondItem="HXG-3D-Jii" secondAttribute="centerX" constant="-0.5" id="Vzj-La-9kf"/>
                             <constraint firstAttribute="trailingMargin" secondItem="UFg-lX-sWL" secondAttribute="trailing" constant="-16" id="WJ3-e8-eqf"/>
                             <constraint firstItem="jhK-Vl-aPf" firstAttribute="top" secondItem="UFg-lX-sWL" secondAttribute="bottom" constant="81" id="YC5-It-mg9">
                                 <variation key="widthClass=compact" constant="135"/>
                             </constraint>
-                            <constraint firstAttribute="trailingMargin" secondItem="Axa-1Q-CLG" secondAttribute="trailing" constant="-16" id="hUA-qN-biO"/>
-                            <constraint firstItem="Axa-1Q-CLG" firstAttribute="top" secondItem="IiO-GM-ahe" secondAttribute="bottom" id="qPf-Mx-jsn"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="6pQ-BK-8ST" secondAttribute="bottom" id="YJ7-YE-20b"/>
                             <constraint firstItem="3tm-ho-N6P" firstAttribute="leading" secondItem="bpq-ZF-1ml" secondAttribute="leadingMargin" constant="-16" id="xfW-jH-Whz"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
+                                <exclude reference="6pQ-BK-8ST"/>
                                 <exclude reference="3tm-ho-N6P"/>
                                 <exclude reference="UFg-lX-sWL"/>
-                                <exclude reference="Axa-1Q-CLG"/>
                                 <exclude reference="HXG-3D-Jii"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="JFB-kl-w1O"/>
-                                <exclude reference="YC5-It-mg9"/>
-                                <exclude reference="Vzj-La-9kf"/>
-                                <exclude reference="MIC-hL-YwI"/>
-                                <exclude reference="hUA-qN-biO"/>
-                                <exclude reference="qPf-Mx-jsn"/>
                                 <exclude reference="FK7-zM-jbf"/>
                                 <exclude reference="xfW-jH-Whz"/>
+                                <exclude reference="1ww-s4-gKV"/>
+                                <exclude reference="8MQ-yc-66C"/>
+                                <exclude reference="OuJ-eK-sy7"/>
+                                <exclude reference="YJ7-YE-20b"/>
                                 <exclude reference="EWF-Bg-kNa"/>
                                 <exclude reference="FSx-c5-QBG"/>
                                 <exclude reference="WJ3-e8-eqf"/>
+                                <exclude reference="Vzj-La-9kf"/>
+                                <exclude reference="JFB-kl-w1O"/>
+                                <exclude reference="YC5-It-mg9"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
+                                <include reference="6pQ-BK-8ST"/>
                                 <include reference="3tm-ho-N6P"/>
                                 <include reference="UFg-lX-sWL"/>
-                                <include reference="Axa-1Q-CLG"/>
                                 <include reference="HXG-3D-Jii"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="JFB-kl-w1O"/>
-                                <include reference="YC5-It-mg9"/>
-                                <include reference="Vzj-La-9kf"/>
-                                <include reference="MIC-hL-YwI"/>
-                                <include reference="hUA-qN-biO"/>
-                                <include reference="qPf-Mx-jsn"/>
                                 <include reference="FK7-zM-jbf"/>
                                 <include reference="xfW-jH-Whz"/>
+                                <include reference="1ww-s4-gKV"/>
+                                <include reference="8MQ-yc-66C"/>
+                                <include reference="OuJ-eK-sy7"/>
+                                <include reference="YJ7-YE-20b"/>
                                 <include reference="EWF-Bg-kNa"/>
                                 <include reference="FSx-c5-QBG"/>
                                 <include reference="WJ3-e8-eqf"/>
+                                <include reference="Vzj-La-9kf"/>
+                                <include reference="JFB-kl-w1O"/>
+                                <include reference="YC5-It-mg9"/>
                             </mask>
                         </variation>
                     </view>
@@ -691,7 +680,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Logo" width="320" height="123"/>
+        <image name="Background" width="750" height="1203"/>
         <image name="SearchButton" width="103" height="39"/>
     </resources>
 </document>

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		EA4609011AB35A5C00F038C9 /* DetailEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4609001AB35A5C00F038C9 /* DetailEventViewController.swift */; };
+		EA5208661AB400D10016C450 /* background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EA5208651AB400D10016C450 /* background.jpg */; };
 		EA7731E31AB20815003D6A11 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA7731E21AB20815003D6A11 /* MediaPlayer.framework */; };
 		EA7732991AB28970003D6A11 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA7732981AB28970003D6A11 /* SearchViewController.swift */; };
 		EA77329B1AB28F6B003D6A11 /* VideoRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA77329A1AB28F6B003D6A11 /* VideoRecord.swift */; };
@@ -34,6 +35,7 @@
 
 /* Begin PBXFileReference section */
 		EA4609001AB35A5C00F038C9 /* DetailEventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailEventViewController.swift; sourceTree = "<group>"; };
+		EA5208651AB400D10016C450 /* background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background.jpg; sourceTree = "<group>"; };
 		EA7731E21AB20815003D6A11 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		EA7732981AB28970003D6A11 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchViewController.swift; path = ../SearchViewController.swift; sourceTree = "<group>"; };
 		EA77329A1AB28F6B003D6A11 /* VideoRecord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoRecord.swift; sourceTree = "<group>"; };
@@ -98,6 +100,7 @@
 				EAAE609C1AB13855005B669B /* AppDelegate.swift */,
 				EAAE60A11AB13855005B669B /* ViewController.swift */,
 				EAAE60A31AB13855005B669B /* Main.storyboard */,
+				EA5208651AB400D10016C450 /* background.jpg */,
 				EA4609001AB35A5C00F038C9 /* DetailEventViewController.swift */,
 				EA77329A1AB28F6B003D6A11 /* VideoRecord.swift */,
 				EAAE60C11AB14109005B669B /* result.swift */,
@@ -215,6 +218,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EAAE60A51AB13855005B669B /* Main.storyboard in Resources */,
+				EA5208661AB400D10016C450 /* background.jpg in Resources */,
 				EAAE60AA1AB13855005B669B /* LaunchScreen.xib in Resources */,
 				EAAE60A71AB13855005B669B /* Images.xcassets in Resources */,
 			);
