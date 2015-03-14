@@ -86,6 +86,7 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="72" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="6MI-F4-Xig" userLabel="result view">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="sectionIndexBackgroundColor" red="0.68235294120000001" green="0.30588235289999999" blue="0.85490196080000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" restorationIdentifier="cell" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="72" id="4aN-Nw-YV7" customClass="ResultTableViewCell" customModule="kinect" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -136,6 +137,7 @@
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <outlet property="kinectNumber" destination="4W9-IK-ws0" id="cFm-NP-qV3"/>
                                             <outlet property="roomNumber" destination="IDG-ML-RRS" id="gYw-PO-BJY"/>
@@ -211,6 +213,7 @@
                         <outlet property="resultViewLeadingConstraint" destination="6yn-eI-fy2" id="FO2-ak-ATC"/>
                         <outlet property="resultViewTopConstraint" destination="zuR-XU-cdr" id="GON-xv-OqN"/>
                         <outlet property="roomLabel" destination="cDd-1f-oTL" id="zah-Rt-uD5"/>
+                        <outlet property="searchParameterView" destination="M1F-ch-cIN" id="A4B-I6-1mu"/>
                         <outlet property="searchParametersViewTrailingConstraint" destination="hK4-os-cJj" id="1Pi-cc-7V1"/>
                         <outlet property="timeLabel" destination="1sj-wS-vmu" id="uD3-ia-Pmh"/>
                         <outlet property="videoView" destination="RZz-oA-Av5" id="BJb-BO-fak"/>

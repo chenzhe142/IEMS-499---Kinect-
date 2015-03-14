@@ -56,6 +56,7 @@ class ViewController: UIViewController, UITableViewDelegate {
     //ui view
     @IBOutlet weak var resultTableView: UITableView!
     @IBOutlet weak var videoView: UIView!
+    @IBOutlet weak var searchParameterView: UIView!
     
     
     //initialize view
@@ -83,6 +84,8 @@ class ViewController: UIViewController, UITableViewDelegate {
         data = dataOfJson("http://129.105.36.214/iosserver.php?id=\(self.id)&StartTime=\(self.inputStartTime)&EndTime=\(self.inputEndTime)")
         
         self.setUpVideoRecord()
+        resultTableView.backgroundColor = UIColor(red: 0.6823, green: 0.3059, blue: 0.8549, alpha: 1.0)
+        searchParameterView.backgroundColor = UIColor(red: 0.9059, green: 0.7725, blue: 0.9569, alpha: 1.0)
     }
     
     
@@ -207,6 +210,9 @@ class ViewController: UIViewController, UITableViewDelegate {
     
     func tableView(tableView: UITableView!, numberOfRowsInSection section: Int) -> Int
     {
+//        if (self.arrayOfVideo.count < 5) {
+//            return 5
+//        }
         return self.arrayOfVideo.count;
     }
     
@@ -215,6 +221,23 @@ class ViewController: UIViewController, UITableViewDelegate {
     {
         var cell = tableView.dequeueReusableCellWithIdentifier("cell") as ResultTableViewCell
         //let singleResult = arrayOfResults[indexPath.row]
+        
+        if (indexPath.row == 0) {
+            cell.backgroundColor = UIColor(red: 0.8705, green: 0.667, blue: 0.9608, alpha: 1.0)
+        }
+        if (indexPath.row == 1) {
+            cell.backgroundColor = UIColor(red: 0.8549, green: 0.576, blue: 0.9647, alpha: 1.0)
+        }
+        if (indexPath.row == 2) {
+            cell.backgroundColor = UIColor(red: 0.78, green: 0.467, blue: 0.9176, alpha: 1.0)
+        }
+        if (indexPath.row == 3) {
+            cell.backgroundColor = UIColor(red: 0.7765, green: 0.3569, blue: 0.945, alpha: 1.0)
+        }
+        if (indexPath.row > 3) {
+            cell.backgroundColor = UIColor(red: 0.6823, green: 0.3059, blue: 0.8549, alpha: 1.0)
+        }
+        
         
         let videorecord = self.arrayOfVideo[indexPath.row]
         cell.setCell(videorecord.kinect, startTimeText: videorecord.StartTime, endTimeText: videorecord.EndTime, videoPathText: videorecord.VideoPath, fileNameText: videorecord.FileName, roomNumberText: videorecord.room)
@@ -269,6 +292,7 @@ class ViewController: UIViewController, UITableViewDelegate {
         
         return [playVideoAction];
     }
+    
 
     
     ///////////////////////////////////////////////////////
